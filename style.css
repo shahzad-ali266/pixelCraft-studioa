@@ -1,0 +1,392 @@
+:root {
+    --blush: #fff1f4;
+    --petal: #ffd9e2;
+    --rose: #f48fb1;
+    --berry: #b3195a;
+    --plum: #5a1235;
+    --paper: #fffaf6;
+    --radius: 22px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: var(--plum);
+    background: var(--blush);
+    line-height: 1.65;
+    font-size: 1.05rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Yellowtail', 'Brush Script MT', cursive;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--berry)
+}
+
+h1 {
+    font-size: clamp(3rem, 9vw, 5.8rem)
+}
+
+h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: .4em
+}
+
+h3 {
+    font-size: 1.7rem;
+    margin-bottom: .2em
+}
+
+a {
+    color: inherit
+}
+
+:focus-visible {
+    outline: 3px solid var(--berry);
+    outline-offset: 3px
+}
+
+.wrap {
+    width: min(1080px, 92%);
+    margin: 0 auto
+}
+
+section {
+    padding: 5rem 0
+}
+
+/* header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 241, 244, .92);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px dashed var(--petal)
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .8rem 0
+}
+
+.logo {
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.8rem;
+    color: var(--berry);
+    text-decoration: none
+}
+
+nav ul {
+    display: flex;
+    gap: 1.4rem;
+    list-style: none;
+    flex-wrap: wrap
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 700
+}
+
+nav a:hover {
+    color: var(--berry)
+}
+
+/* buttons */
+.btn {
+    display: inline-block;
+    background: var(--berry);
+    color: #fff;
+    padding: .85rem 1.8rem;
+    border-radius: 999px 14px 999px 14px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform .2s, background .2s
+}
+
+.btn:hover {
+    background: var(--plum);
+    transform: rotate(-2deg)
+}
+
+.btn.small {
+    padding: .55rem 1.2rem
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--berry);
+    border: 2px solid var(--berry)
+}
+
+.btn.ghost:hover {
+    background: var(--berry);
+    color: #fff
+}
+
+/* hero */
+.hero {
+    padding: 4.5rem 0 5rem;
+    background: radial-gradient(circle at 85% 20%, var(--petal), transparent 55%), radial-gradient(circle at 5% 90%, #ffe4ec, transparent 50%)
+}
+
+.hero .wrap {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center
+}
+
+.hero p.lead {
+    font-size: 1.2rem;
+    max-width: 34ch;
+    margin: 1.2rem 0 2rem
+}
+
+.hero .actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.stack {
+    position: relative;
+    height: 380px
+}
+
+.card {
+    position: absolute;
+    background: var(--paper);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 14px 30px rgba(179, 25, 90, .18)
+}
+
+.card.biz {
+    width: 250px;
+    top: 10px;
+    left: 0;
+    transform: rotate(-6deg);
+    background: linear-gradient(135deg, #ffc2d4, #ff9bbd);
+    color: #fff
+}
+
+.card.biz b {
+    font-family: 'Yellowtail', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    display: block
+}
+
+.card.menu {
+    width: 190px;
+    top: 150px;
+    right: 0;
+    transform: rotate(5deg)
+}
+
+.card.menu li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: .95rem;
+    border-bottom: 1px dotted var(--rose);
+    padding: .2rem 0
+}
+
+.card.menu h4 {
+    font-family: 'Yellowtail', cursive;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--berry)
+}
+
+.card.quote {
+    width: 220px;
+    bottom: 0;
+    left: 30px;
+    transform: rotate(-2deg);
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.8rem;
+    color: var(--berry);
+    line-height: 1.15
+}
+
+/* services */
+.services {
+    background: var(--paper)
+}
+
+.intro {
+    max-width: 52ch;
+    margin-bottom: 2.5rem
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem
+}
+
+.service {
+    background: var(--blush);
+    border: 2px solid var(--petal);
+    border-radius: var(--radius);
+    padding: 1.6rem
+}
+
+.service:nth-child(even) {
+    border-radius: var(--radius) 4px var(--radius) 4px
+}
+
+.service p {
+    font-size: .98rem
+}
+
+.web {
+    margin-top: 2.5rem;
+    background: var(--plum);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center
+}
+
+.web h3 {
+    color: var(--petal);
+    font-size: 2.4rem
+}
+
+.web ul {
+    list-style: none;
+    display: grid;
+    gap: .4rem
+}
+
+.web li::before {
+    content: "\2665";
+    color: var(--rose);
+    margin-right: .6rem
+}
+
+/* why */
+.why ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 2rem
+}
+
+.why li {
+    background: var(--paper);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.4rem;
+    box-shadow: 0 6px 16px rgba(179, 25, 90, .1)
+}
+
+.why li b {
+    display: block;
+    color: var(--berry)
+}
+
+.why li span {
+    font-size: .95rem
+}
+
+/* contact */
+.contact {
+    background: var(--petal);
+    text-align: center
+}
+
+.contact .note {
+    background: var(--paper);
+    display: inline-block;
+    padding: 2.5rem 3rem;
+    max-width: 620px;
+    transform: rotate(-1deg);
+    box-shadow: 0 12px 26px rgba(90, 18, 53, .15);
+    clip-path: polygon(0 3%, 4% 0, 12% 2%, 22% 0, 35% 2%, 50% 0, 66% 2%, 80% 0, 92% 2%, 100% 0, 100% 97%, 95% 100%, 80% 98%, 62% 100%, 45% 98%, 28% 100%, 10% 98%, 0 100%)
+}
+
+.contact p {
+    margin: .8rem 0 1.6rem
+}
+
+.handle {
+    display: block;
+    margin-top: 1.2rem;
+    font-weight: 800
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: .95rem
+}
+
+/* one entrance on load */
+.hero .wrap>div:first-child {
+    animation: rise .8s ease both
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+    }
+}
+
+@media (max-width:760px) {
+
+    .hero .wrap,
+    .web {
+        grid-template-columns: 1fr
+    }
+
+    .stack {
+        height: 340px
+    }
+
+    nav ul {
+        gap: .9rem;
+        font-size: .95rem
+    }
+
+    .contact .note {
+        padding: 2rem 1.4rem
+    }
+}
